@@ -106,7 +106,7 @@ class SN(object):
             wavelengths = wavelengths[sort_indices]
             fluxes = fluxes[sort_indices]
             flux_errs = flux_errs[sort_indices]
-            indg=np.where((wavelengths > 5000)
+            indg=np.where((wavelengths > 5000))
             wavelengths = wavelengths[indg]
             fluxes = fluxes[indg]
             flux_errs = flux_errs[indg]
