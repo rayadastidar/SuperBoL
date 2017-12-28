@@ -107,13 +107,13 @@ class SN(object):
             fluxes = fluxes[sort_indices]
             flux_errs = flux_errs[sort_indices]
             indg=np.where((wavelengths > 5000))
-            wavelengths = wavelengths[indg]
-            fluxes = fluxes[indg]
-            flux_errs = flux_errs[indg]
+            wave = wavelengths[indg]
+            flux = fluxes[indg]
+            flux_error = flux_errs[indg]
             fqbol, fqbol_err = fqbol_trapezoidal(wavelengths, fluxes,
                                                  flux_errs)
             temperature, angular_radius, perr = bb_fit_parameters(
-                wavelengths, fluxes, flux_errs)
+                wave, flux, flux_error)
 
             temperature_err = perr[0]
             angular_radius_err = perr[1]
